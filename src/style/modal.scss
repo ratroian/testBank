@@ -1,0 +1,44 @@
+.modal {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 16px;
+    width: 820px;
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(1);
+    background-color: $back-modal;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &--button {
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+    &__input {
+        border: none;
+        background-color: $back-input;
+        margin-bottom: 18px;
+        border-radius: 5px;
+        font-size: 16px;
+        height: 36px;
+    }
+    &__element {
+        border: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__button {
+        &--send {
+            background-color: $button-modal-color;
+            margin-right: 16px;
+        }
+    }
+}

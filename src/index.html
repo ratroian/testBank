@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body class="body">
+        <header class="header padding">
+            <div class="title">BankID</div>
+            <div class="balance">
+                <div class="balance__value">Balance:</div>
+                <div class="balance__value">
+                    <b>$</b><span class="account-value"></span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="hero padding">
+                <div class="hero__text">Transactions:</div>
+                <button class="hero__button button" id="new-operation">NEW TRANSACTION</button>
+            </div>
+            <ul class="transactions-list padding">
+                <!-- <li class="transactions-list__item card">
+                    <p class="card__date">2021-01-01</p>
+                    <p class="card__description">Top up balance</p>
+                    <p class="card__value">20$</p>
+                </li>
+                <li class="transactions-list__item card">
+                    <p class="card__date">2021-01-01</p>
+                    <p class="card__description">Top up balance</p>
+                    <p class="card__value">20$</p>
+                </li>
+                <li class="transactions-list__item card">
+                    <p class="card__date">2021-01-01</p>
+                    <p class="card__description">Top up balance</p>
+                    <p class="card__value">20$</p>
+                </li>
+                <li class="transactions-list__item card">
+                    <p class="card__date">2021-01-01</p>
+                    <p class="card__description">Top up balance</p>
+                    <p class="card__value">20$</p>
+                </li> -->
+            </ul>
+        </main>
+        <div class="modal-bg" id="modal">
+            <section class="modal">
+                <div class="modal__wrapper">
+                    <h2 class="modal__title">New Transaction</h2>
+                    <button class="button button__modal button__modal--close" id="close-modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                            <path d="M1 1L14.5 14.5M28 28L14.5 14.5M14.5 14.5L28 1L1 28" stroke="black"/>
+                            </svg>
+                    </button>
+                </div>
+                <form
+                    action="https://bank-api-transactions.herokuapp.com/api/transactions"
+                    method="post"
+                    class="form"
+                    enctype="multipart/form-data"
+                    autocomplete="off"
+                    id="form-transaction"
+                    name="transactionsForm"
+                >
+                    <fieldset class="modal__element">
+                        <input
+                            id="description"
+                            name="description"
+                            type="text"
+                            placeholder="Description"
+                            required
+                            minlength="0"
+                            maxlength="100"
+                            class="modal__input"
+                            value=" "
+                        />
+                        <input
+                            id="amount"
+                            name="amount"
+                            type="number"
+                            placeholder="Amount"
+                            required
+                            class="modal__input"
+                            value=" "
+                        />
+                        <select name="type" id="type" class="modal__input">
+                            <option value="Sending">Sending</option>
+                            <option value="Receiving">Receiving</option>
+                        </select>
+                    </fieldset>
+                    <div class="modal__wrapper modal__wrapper--button">
+                        <input class="button modal__button modal__button--send" type="submit" value="Send"></input>
+                        <button type="button" class="button modal__button">Decline</button>
+                    </div> 
+                </form>
+            </section>
+        </div>
+        <template id="card-template">
+            <li class="transactions-list__item card">
+                <p class="card__date"></p>
+                <p class="card__description"></p>
+                <p class="card__value"></p>
+            </li>
+        </template>
+    </body>
+</html>

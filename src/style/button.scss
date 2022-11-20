@@ -1,0 +1,25 @@
+.button {
+    border: none;
+    background-color: $button-color;
+    cursor: pointer;
+    color: $card-text-color;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    min-width: 225px;
+
+    &__modal {
+        &--send {
+            background-color: $button-modal-color;
+        }
+        &--close {
+            content: '';
+            border: none;
+            background: none;
+            padding: 0;
+            min-width: 28px;
+            height: 28px;         
+        }
+    }
+}
